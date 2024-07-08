@@ -1,5 +1,29 @@
 const mongoose = require('mongoose');
-const {type} = require('os');
+const { type } = require('os');
 
 
-const bookSchema = new mongoose.Schema
+const bookSchema = new mongoose.Schema({
+    poster: {
+        type: String
+    },
+
+    isbn: {
+        type: String
+    },
+    author: {
+        type: String
+    },
+
+    Price: {
+        type:Number
+    },
+
+    Name: {
+        type: String
+    },
+
+    descripation: {
+        type: String
+    }
+
+})
