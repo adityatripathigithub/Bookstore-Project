@@ -6,11 +6,22 @@ const bookModels = require('../module/bookSchema');
 router.get('/', function(req, res, next) {
   res.render('home');
 });
+
+
 router.get('/create', function(req, res, next) {
   res.render('create');
 });
-router.post('/create', function(req, res, next) {
-  console.log(req.body);
+
+
+// router.get('/library', function(req, res, next) {
+//   res.render('library');
+// });
+
+
+router.post('/create',  function(req, res, next) {
+  const book =  bookModel.create(req.body)
+  console.log("book")
+
 });
 
 module.exports = router;
