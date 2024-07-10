@@ -18,10 +18,20 @@ router.get('/create', function(req, res, next) {
 // });
 
 
-router.post('/create',  function(req, res, next) {
-  const book =  bookModel.create(req.body)
-  console.log("book")
+router.post('/create', async function(req, res, next) {
+  // const {} = await bookModels.create(req.body)
+try {
+  const book = await new bookModels(req.body)
+  book.name = "book ka name"
+  await book.save()
+  console.log(book)
+  
+}catch{(err)=>{
+  console.log(err)
 
-});
+ }}
+})
+
+
 
 module.exports = router;
