@@ -1,18 +1,35 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
+<%-include('./partials/header')%>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Books</title>
 </head>
-<body>
 
-    <form action="/library">
-        <input type="text" name="name" placeholder="Name">
-        <input type="text" name="author" placeholder="Author">
-        <input type="text" name="isbn" placeholder="ISBN">
-        <button type="submit">Submit</button>
-    </form>
-    
-</body>
-</html> -->
+<body>
+    <h1 class="font-bold">All Book Are Heare</h1>
+
+    <% Books.forEach((ekkitab) => { %>
+    <% console.log(ekkitab) %>
+
+    <div class="sarikitabe" >
+        <div class="mx-10 flex  ekkitab">
+            <div>
+                <img class=" w-full h-[150px]"src="<%=ekkitab.Poster%>"alt="">
+
+                <h2 class="font-semibold" ><%=ekkitab.Name%></h2>
+                <h2 class="font-semibold" ><%=ekkitab.Price%></h2>
+                <h2 class="font-semibold" ><%=ekkitab.author%></h2>
+                <h2 class="font-semibold" ><%=ekkitab.isbn%></h2>
+                <h2 class="font-semibold" ><%=ekkitab.description%></h2>
+
+                <a href="/details/<%=ekkitab._id%>">Explore</a>
+            </div>
+            <% }) %>
+    </div>
+
+
+
+<%-include('./partials/footer')%>

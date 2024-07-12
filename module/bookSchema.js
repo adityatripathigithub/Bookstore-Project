@@ -3,7 +3,7 @@ const { type } = require('os');
 
 
 const bookSchema = new mongoose.Schema({
-    poster: {
+    Poster: {
         type: String
     },
 
@@ -22,9 +22,9 @@ const bookSchema = new mongoose.Schema({
         type: String
     },
 
-    descripation: {
+    description: {
         type: String
-    }
+    },
 
 })
 
